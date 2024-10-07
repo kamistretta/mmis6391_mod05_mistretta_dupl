@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .story-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .story-text {
+        width: 60%;
+        text-align: left;
+    }
+    .story-image {
+        width: 35%;
+        text-align: right;
+    }
+    .story-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+          footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+</style>
+
+<h1>Our Story</h1>
+
+<div class="story-container">
+    <div class="story-text">
+        <p>It all started one quiet afternoon in a small park. I was taking a break from my busy life when I noticed something peculiar—a tiny pigeon, perched on a bench, surrounded by fallen leaves. The pigeon wasn’t doing what pigeons normally do. Instead of pecking around for food, it was staring intently at the pages of an old, discarded book. The sight was oddly heartbreaking, a lone bird yearning for knowledge but unable to fully grasp it. As I approached, the pigeon didn’t fly away; it just looked up at me with those beady eyes as if asking for help. In that moment, I realized something profound: this pigeon was me—or rather, it represented all the children and animals out there who long for the joy of reading but can’t access it.</p>
+
+        <p>That’s when I knew I had to make a change. I envisioned a world where books were available to everyone—whether they had wings or not. So I created Kat's Buzzing Books, a place where stories come to life and where the magic of literature is affordable for everyone. Here, kids, families, and even our feathered friends can find refuge in the pages of a good book, without worrying about the cost. It’s my way of ensuring no child or animal has to experience the loneliness of reading alone, like that little pigeon in the park.</p>
+    </div>
+
+    <div class="story-image">
+        <img src="{{ url_for('static', filename='assets/pigeon.jpg') }}" alt="Orphaned Pigeon Image">
+    </div>
+</div>
+
+{% endblock %}

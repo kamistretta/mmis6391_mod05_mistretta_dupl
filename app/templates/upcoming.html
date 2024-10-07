@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .subheading {
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #8b8b00; /* Darker yellow for contrast */
+    }
+    .book-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    .book-box {
+        background-color: #fffacd; /* Light pastel yellow */
+        border: 2px solid #000; /* Black trim */
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px;
+        width: 40%; /* Adjust width as needed */
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .book-box img {
+        width: 100px; /* Size of book images */
+        height: auto;
+        margin-right: 15px;
+    }
+    .book-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .book-info h4 {
+        margin: 0;
+    }
+    .book-info p {
+        margin: 5px 0;
+    }
+</style>
+
+<h1>Upcoming Releases</h1>
+<p class="subheading">Come see what all the buzz is about!</p>
+
+<div class="book-container">
+    <!-- Book 1 -->
+    <div class="book-box">
+        <img src="{{ url_for('static', filename='assets/book.jpg') }}" alt="Book Cover">
+        <div class="book-info">
+            <h4>Title: The Buzzing Adventures</h4>
+            <p>Author: Beeatrice Honey</p>
+            <p>Release Date: October 10, 2024</p>
+        </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book-box">
+        <img src="{{ url_for('static', filename='assets/book1.jpg') }}" alt="Book Cover">
+        <div class="book-info">
+            <h4>Title: Fluttering Pages</h4>
+            <p>Author: Pollie Nectar</p>
+            <p>Release Date: October 17, 2024</p>
+        </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="book-box">
+        <img src="{{ url_for('static', filename='assets/book2.jpg') }}" alt="Book Cover">
+        <div class="book-info">
+            <h4>Title: Honeycomb Tales</h4>
+            <p>Author: Buzzy W. Bee</p>
+            <p>Release Date: October 24, 2024</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
