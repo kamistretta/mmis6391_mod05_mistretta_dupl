@@ -11,7 +11,7 @@ def get_db():
             host = 'g3v9lgqa8h5nq05o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             user = 'lvtuakxga4bb2385',
             password = 'q3uriqdhtgti3fjo',
-            database = 'risc5swh9njbh2oqm',
+            database = 'risc5swh9njbh2oq',
             cursorclass=pymysql.cursors.DictCursor  # Set the default cursor class to DictCursor
         )
     return g.db
