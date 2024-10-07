@@ -21,6 +21,6 @@ def events():
 def runners():
     return render_template('runners.html')
 
-@app.route('/story')
-def story():
-    return render_template('story.html')
+@app.route('/book_info')
+def book_info():
+    return render_template('book_info.html')

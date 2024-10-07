@@ -7,8 +7,10 @@ app.secret_key = 'your-secret'  # Replace with an environment variable
 
 # Register Blueprints
 from app.blueprints.runners import runners
+from app.blueprints.book_info import book_info
 
 app.register_blueprint(runners)
+app.register_blueprint(book_info)
 
 from . import routes
 
