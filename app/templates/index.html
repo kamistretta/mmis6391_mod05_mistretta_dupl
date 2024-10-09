@@ -9,9 +9,44 @@
     <main>
         <h2>Welcome to Kitty's Pet Store!</h2>
         <p>Explore a world of pets that will bring joy and companionship into your life.</p>
-        <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet Image 1" class="pet-image">
-        <img src="{{ url_for('static', filename='assets/pet2.png') }}" alt="Pet Image 2" class="pet-image">
-        <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet Image 3" class="pet-image">
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet Image 1" class="pet-image">
+            <img src="{{ url_for('static', filename='assets/pet2.png') }}" alt="Pet Image 2" class="pet-image">
+            <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet Image 3" class="pet-image">
+        </div>
+
         <p>Check out our latest arrivals and find your new best friend!</p>
     </main>
+
+    <style>
+        body {
+            text-align: center;                /* Center all text in the body */
+            font-family: 'Comic Sans MS', cursive, sans-serif;  /* Fun font */
+            background-color: #f9f9f9;        /* Optional: light background color */
+        }
+
+        header {
+            margin-bottom: 20px;              /* Space below header */
+        }
+
+        main {
+            margin: 0 auto;                   /* Center main content */
+            max-width: 800px;                 /* Optional: limit width for better readability */
+        }
+
+        .image-container {
+            display: flex;                     /* Use flexbox to align images */
+            justify-content: center;           /* Center images horizontally */
+            align-items: center;               /* Center images vertically */
+            gap: 20px;                         /* Add space between images */
+            margin: 20px 0;                   /* Add some margin above and below */
+        }
+
+        .pet-image {
+            width: 200px;                      /* Set a fixed width for all images */
+            height: 200px;                     /* Set a fixed height for all images */
+            object-fit: cover;                 /* Crop images to fit the container */
+        }
+    </style>
 {% endblock %}
