@@ -2,10 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask Example</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffd700; /* Golden yellow background */
+        }
+                footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">FlaskApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,14 +35,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('index') }}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('runners.runner') }}">Runner</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('about') }}">About</a>
-            </li>
              <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('book_info.book') }}">Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('story') }}">Our Story</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('events') }}">Events & Locations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('upcoming') }}">Upcoming Releases</a>
             </li>
         </ul>
     </div>
@@ -32,6 +57,10 @@
 <div class="container">
     {% block content %}{% endblock %}
 </div>
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Kat's Buzzing Books™. All rights reserved.</p>
+    </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
