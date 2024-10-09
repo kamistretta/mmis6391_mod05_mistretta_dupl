@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Kitty's Pet Store</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #E6E6FA; /* Pastel purple */
-            color: #343a40;
-        }
-        h1, h2 {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .container {
-            margin-top: 30px;
-        }
-        .pet-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
 <div class="container">
     <h1>Welcome to Kitty's Pet Store!</h1>
     <h2>Our Backstory</h2>
@@ -44,13 +18,9 @@
     </p>
 
     <h2>Meet Some of Our Pets!</h2>
-    <img src="pet1.jpeg" alt="Pet 1" class="pet-image">
-    <img src="pet2.png" alt="Pet 2" class="pet-image">
-    <img src="pet3.jpeg" alt="Pet 3" class="pet-image">
+    <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet 1" class="pet-image">
+    <img src="{{ url_for('static', filename='assets/pet2.png') }}" alt="Pet 2" class="pet-image">
+    <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet 3" class="pet-image">
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}
