@@ -7,12 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kat's Buzzing Books</title>
+    <title>Kitty's Pet Store</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #E6E6FA; /* Pastel purple */
         }
         header {
             background-color: #fffacd; /* Lighter pastel yellow */
@@ -28,7 +29,7 @@
             font-size: 1.2em;
             margin: 0;
         }
-        .bee-image {
+        .pet-image {
             display: block;
             margin: 20px auto;
             width: 300px;
@@ -67,19 +68,21 @@
 <body>
 
     <header>
-        <h1>Kat's Buzzing Books</h1>
-        <p>Your Hive of Literary Treasures</p>
+        <h1>Kitty's Pet Store</h1>
+        <p>Your Destination for Furry Friends</p>
     </header>
 
     <main>
-        <h2>Welcome to the Hive!</h2>
-        <p>Explore a world of books that will keep you buzzing with excitement.</p>
-        <img src="{{ url_for('static', filename='assets/bee.jpeg') }}" alt="Bee Image" width="300">
-        <p>Check out our latest collection and buzz through our best-sellers!</p>
+        <h2>Welcome to Kitty's Pet Store!</h2>
+        <p>Explore a world of pets that will bring joy and companionship into your life.</p>
+        <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet Image 1" class="pet-image">
+        <img src="{{ url_for('static', filename='assets/pet2.jpeg') }}" alt="Pet Image 2" class="pet-image">
+        <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet Image 3" class="pet-image">
+        <p>Check out our latest arrivals and find your new best friend!</p>
     </main>
 
     <footer>
-        <p>&copy; 2024 Kat's Buzzing Books. All Rights Reserved.</p>
+        <p>&copy; 2024 Kitty's Pet Store. All Rights Reserved.</p>
     </footer>
 
 </body>
