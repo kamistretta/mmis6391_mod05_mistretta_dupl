@@ -5,10 +5,6 @@ from . import app
 def index():
     return render_template('index.html')
 
-@app.route('/pet_info')
-def pet_info():
-    return render_template('pet_info.html')
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
@@ -17,6 +13,3 @@ def contact():
 def introduction():
     return render_template('introduction.html')
 
-@app.route('/products')
-def products():
-    return render_template('products.html')
