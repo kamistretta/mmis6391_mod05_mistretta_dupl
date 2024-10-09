@@ -1,72 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitty's Pet Store</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #E6E6FA; /* Pastel purple */
-        }
-        header {
-            background-color: #fffacd; /* Lighter pastel yellow */
-            text-align: center;
-            padding: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-        }
-        header p {
-            font-size: 1.2em;
-            margin: 0;
-        }
-        .pet-image {
-            display: block;
-            margin: 20px auto;
-            width: 300px;
-            height: auto;
-        }
-        nav {
-            text-align: center;
-            padding: 15px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        main {
-            text-align: center;
-            padding: 40px;
-        }
-        main h2 {
-            font-size: 2em;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-
     <header>
         <h1>Kitty's Pet Store</h1>
         <p>Your Destination for Furry Friends</p>
@@ -76,16 +10,8 @@
         <h2>Welcome to Kitty's Pet Store!</h2>
         <p>Explore a world of pets that will bring joy and companionship into your life.</p>
         <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet Image 1" class="pet-image">
-        <img src="{{ url_for('static', filename='assets/pet2.jpeg') }}" alt="Pet Image 2" class="pet-image">
+        <img src="{{ url_for('static', filename='assets/pet2.png') }}" alt="Pet Image 2" class="pet-image">
         <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet Image 3" class="pet-image">
         <p>Check out our latest arrivals and find your new best friend!</p>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Kitty's Pet Store. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
-
 {% endblock %}
