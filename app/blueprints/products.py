@@ -48,7 +48,7 @@ def update_product(product_id):
         return redirect(url_for('products.products_list'))
 
     # GET method: fetch product's current data for pre-populating the form
-    cursor.execute('SELECT * FROM products WHERE products = %s', (product_id,))
+    cursor.execute('SELECT * FROM products WHERE product_id = %s', (product_id,))
     current_product_info = cursor.fetchone()
     return render_template('update_product.html', current_product_info=current_product_info)
 
