@@ -3,39 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitty's Pet Store</title>
+    <title>Kitty's Classic Movies</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         body {
-            background-color: #E6E6FA; /* Pastel purple background */
+            background-color: #f5f5dc; /* Warm beige background, reminiscent of old theaters */
+            font-family: 'Times New Roman', Times, serif; /* Classic font */
+            color: #333; /* Text color for readability */
         }
+
+        .navbar {
+            background-color: #c0c0c0; /* Classic silver color, mimicking old Hollywood glamour */
+        }
+        .navbar-brand, .nav-link {
+            color: #4b0082; /* Rich indigo, adds a regal touch */
+        }
+        .nav-link:hover {
+            color: #ff4500; /* Orange-red, evoking old Hollywood neon signs */
+        }
+
         footer {
-            background-color: #333;
+            background-color: #2f4f4f; /* Dark slate gray for a dramatic effect */
             color: #fff;
             text-align: center;
-            padding: 10px 0;
-            position: relative; /* Changed to relative for proper footer positioning */
+            padding: 15px 0;
+            position: relative;
             width: 100%;
             bottom: 0;
         }
         footer p {
             margin: 0;
+            font-size: 14px;
         }
-        .navbar {
-            background-color: #fffacd; /* Light pastel yellow for navbar */
+
+        .container {
+            margin-top: 30px;
         }
-        .navbar-brand, .nav-link {
-            color: #333; /* Dark color for text */
-        }
-        .nav-link:hover {
-            color: #8b008b; /* Dark magenta for hover effect */
+
+        h1, h2 {
+            font-family: 'Georgia', serif; /* Classic serif font for headings */
+            color: #4b0082; /* Indigo for a classic look */
         }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Kitty's Pet Store</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">Kitty's Classic Movie Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,16 +60,13 @@
                     <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('pet_info.pets') }}">Pet Info</a>
+                    <a class="nav-link" href="{{ url_for('movie_list') }}">Movie List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('products.products_list') }}">Products</a>
+                    <a class="nav-link" href="{{ url_for('movie_info.movies') }}">Add Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('introduction') }}">Introduction</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                    <a class="nav-link" href="{{ url_for('movie_info.movies') }}">Update/Delete Movies</a>
                 </li>
             </ul>
         </div>
@@ -68,7 +80,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Kitty's Pet Store. All Rights Reserved.</p>
+        <p>&copy; 2024 Kitty's Classic Movie Store. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->

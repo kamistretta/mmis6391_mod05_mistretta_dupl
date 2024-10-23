@@ -2,28 +2,27 @@
 
 {% block content %}
     <header>
-        <h1>Kitty's Pet Store</h1>
-        <p>Your Destination for Furry Friends</p>
+        <h1>Kitty's Classic Movie Store</h1>
+        <p>Your Destination for Timeless Films</p>
     </header>
 
     <main>
-        <h2>Welcome to Kitty's Pet Store!</h2>
-        <p>Explore a world of pets that will bring joy and companionship into your life.</p>
+        <h2>Welcome to Kitty's Classic Movie Store!</h2>
+        <p>Step into the golden era of cinema and relive the magic of classic films that have stood the test of time.</p>
 
-        <div class="image-container">
-            <img src="{{ url_for('static', filename='assets/pet1.jpeg') }}" alt="Pet Image 1" class="pet-image">
-            <img src="{{ url_for('static', filename='assets/pet2.png') }}" alt="Pet Image 2" class="pet-image">
-            <img src="{{ url_for('static', filename='assets/pet3.jpeg') }}" alt="Pet Image 3" class="pet-image">
-        </div>
+        <p>Explore our curated collection of iconic movies, from black-and-white masterpieces to vintage color films that have shaped the movie industry.</p>
+        <p>We offer a wide range of genres including drama, romance, film noir, westerns, and more. Whether you're a seasoned movie buff or a newcomer to the classics, there's something here for everyone.</p>
 
-        <p>Check out our latest arrivals and find your new best friend!</p>
+        <p>Don’t forget to check out our special editions, behind-the-scenes features, and classic movie memorabilia to enhance your viewing experience.</p>
+
+        <p>Feel free to browse our extensive movie catalog and take home a piece of cinematic history today!</p>
     </main>
 
     <style>
         body {
             text-align: center;                /* Center all text in the body */
-            font-family: 'Comic Sans MS', cursive, sans-serif;  /* Fun font */
-            background-color: #f9f9f9;        /* Optional: light background color */
+            font-family: 'Georgia', serif;     /* Classic font for a vintage feel */
+            background-color: #f9f9f9;        /* Light background color */
         }
 
         header {
@@ -33,20 +32,6 @@
         main {
             margin: 0 auto;                   /* Center main content */
             max-width: 800px;                 /* Optional: limit width for better readability */
-        }
-
-        .image-container {
-            display: flex;                     /* Use flexbox to align images */
-            justify-content: center;           /* Center images horizontally */
-            align-items: center;               /* Center images vertically */
-            gap: 20px;                         /* Add space between images */
-            margin: 20px 0;                   /* Add some margin above and below */
-        }
-
-        .pet-image {
-            width: 200px;                      /* Set a fixed width for all images */
-            height: 200px;                     /* Set a fixed height for all images */
-            object-fit: cover;                 /* Crop images to fit the container */
         }
     </style>
 {% endblock %}

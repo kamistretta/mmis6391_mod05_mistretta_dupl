@@ -1,0 +1,12 @@
+Table: movie_info
+
+Columns:
+movie_id
+int AI PK
+title
+varchar(45)
+director
+varchar(45)
+release_year
+varchar(45)
+
