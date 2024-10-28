@@ -22,10 +22,31 @@ def movies():
         flash('New movie information added successfully!', 'success')
         return redirect(url_for('movie_info.movies'))
 
-    # Handle GET request to display all movies
-    cursor.execute('SELECT * FROM movie_info')
+    # Handle GET request for filtering
+    title_filter = request.args.get('title')
+    director_filter = request.args.get('director')
+    release_year_filter = request.args.get('release_year')
+
+    # Construct SQL query for filtering
+    query = 'SELECT * FROM movie_info WHERE TRUE'
+    params = []
+
+    if title_filter:
+        query += ' AND title LIKE %s'
+        params.append(f'%{title_filter}%')
+
+    if director_filter:
+        query += ' AND director LIKE %s'
+        params.append(f'%{director_filter}%')
+
+    if release_year_filter:
+        query += ' AND release_year = %s'
+        params.append(release_year_filter)
+
+    cursor.execute(query, params)
     all_movies = cursor.fetchall()
-    return render_template('movie_add.html', all_movies=all_movies)  # Ensure this matches your file name
+
+    return render_template('movie.html', all_movies=all_movies)
 
 @movie_info.route('/update_movie/<int:movie_id>', methods=['GET', 'POST'])
 def update_movie(movie_id):
@@ -48,7 +69,7 @@ def update_movie(movie_id):
     # GET method: fetch movie's current data for pre-populating the form
     cursor.execute('SELECT * FROM movie_info WHERE movie_id = %s', (movie_id,))
     current_movie_info = cursor.fetchone()
-    return render_template('update_movie.html', current_movie_info=current_movie_info)
+    return render_template('movie_update.html', current_movie_info=current_movie_info)
 
 @movie_info.route('/delete_movie/<int:movie_id>', methods=['POST'])
 def delete_movie(movie_id):

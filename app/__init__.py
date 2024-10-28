@@ -7,9 +7,10 @@ app.secret_key = 'your-secret'  # Replace with an environment variable
 
 # Register Blueprints
 from app.blueprints.movie_info import movie_info
-
+from app.blueprints.genre_info import genre_info
 
 app.register_blueprint(movie_info)
+app.register_blueprint(genre_info)
 
 
 
